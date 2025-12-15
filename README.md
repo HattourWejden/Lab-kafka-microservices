@@ -233,18 +233,6 @@ docker-compose -f docker-compose-infra.yml down
 docker-compose -f docker-compose-infra.yml down -v
 ```
 
-## Troubleshooting
-
-**Kafka Connection Issues:**
-```bash
-docker logs kafka
-```
-
-**Database Connection Issues:**
-```bash
-docker ps | grep -E "postgres|mongo|mariadb"
-```
-
 **Consumer Not Receiving Messages:**
 - Check consumer group IDs are unique per service
 - Verify topic names match in producer and consumer
