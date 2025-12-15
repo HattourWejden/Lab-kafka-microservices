@@ -40,6 +40,19 @@ services:
       - "27017:27017"
     volumes:
       - mongo-data:/data/db
+  mariadb:
+    image: mariadb:11.1
+    container_name: mariadb-notification
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: notificationdb
+      MYSQL_USER: notifuser
+      MYSQL_PASSWORD: notifpass
+    ports:
+      - "3306:3306"
+    volumes:
+      - mariadb-data:/var/lib/mysql
 volumes:
   postgres-data:
   mongo-data:
+  mariadb-data:
