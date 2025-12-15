@@ -1,7 +1,7 @@
 package com.lab.inventory.health;
 
 import org.apache.kafka.clients.admin.AdminClient;
-import org.apache.kafka.clients.admin.AdminClientConfig;
+import org.apache. kafka.clients.admin.AdminClientConfig;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.actuate.health.Health;
 import org.springframework.boot.actuate.health.HealthIndicator;
@@ -21,7 +21,7 @@ public class KafkaHealthIndicator implements HealthIndicator {
         try {
             Properties props = new Properties();
             props.put(AdminClientConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
-            props.put(AdminClientConfig.REQUEST_TIMEOUT_MS_CONFIG, 3000);
+            props. put(AdminClientConfig.REQUEST_TIMEOUT_MS_CONFIG, 3000);
 
             try (AdminClient adminClient = AdminClient.create(props)) {
                 adminClient.listTopics().names().get(3, TimeUnit.SECONDS);
